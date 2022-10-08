@@ -1,21 +1,50 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import { Table, TableRow, TableCell, TableBody, TableContainer, TableHead, Avatar, Button, TextField} from '@mui/material'
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
+import { type } from '@testing-library/user-event/dist/type'
+
 
 // import makeStyles from '@emotion/styled'
 type twittList = {
     author:string
+    _id:string
+    url:string
+    likes:number
+    imageUrl:string
+    
 }
 type res = {
     data: []
 }
+
+// interface Obj
+// { 
+//         "_id": String,
+//         "url": String,
+//         "text": String,
+//         "author": String,
+//         "publishedDate": String,
+//         "publishedTimestamp": {
+//             "$numberLong": String
+//         },
+//         "scrapedTimestamp": {
+//             "$numberLong": String
+//         },
+//         "retweets": Number,
+//         "likes": Number,
+//         "postTimestamp": {
+//             "$numberLong": Number
+//         },
+//         "requestTimestamp": {
+//             "$numberLong": Number
+//         },
+//         "sentiment": String,
+//         "hashtags": String,
+//         "isRetweet": Boolean,
+//         "rankurDataImport": Boolean
+//     }
+
+
 
 export const TwitterList = () => {
     const [twittList, setTweetList] = useState<twittList[]>([])
@@ -29,15 +58,15 @@ export const TwitterList = () => {
 
     useEffect(() => {
         getData()
-       let store:any = localStorage.getItem("store")
+       let store:any =localStorage.getItem("store")
         let storeParse = JSON.parse(store)
         console.log(storeParse)
         setLocalStore(storeParse)
 
     }, [])
-    const searchUser = (e:any)=>{
-        let filter:any = []
-     let filterData =  twittList.map((matching:any)=>{
+    const searchUser = (e:React.ChangeEvent<HTMLInputElement>)=>{
+        let filter:Array<twittList> = []
+     twittList.map((matching:twittList)=>{
         let key = matching._id
         if(matching.author.search(e.target.value) != -1)
         {
@@ -58,8 +87,8 @@ export const TwitterList = () => {
         
     }
 
-    const filterByDate = (e:any)=>{
-        let filter:any = []
+    const filterByDate = (e:React.ChangeEvent<HTMLInputElement>)=>{
+        let filter:Array<twittList> = []
         
 
         let filterData =  searchDate.map((matching:any)=>{
