@@ -61,7 +61,7 @@ export const TwitterList = () => {
         let store: any = localStorage.getItem("store")
         let storeParse = JSON.parse(store)
         console.log(storeParse)
-        setLocalStore(storeParse)
+        store? setLocalStore(storeParse): setLocalStore([])
 
     }, [])
     const searchUser = (e: React.ChangeEvent<HTMLInputElement>) => {
