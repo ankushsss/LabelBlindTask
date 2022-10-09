@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/LabelBlindTask/static/css/main.073c9b0a.css",
-    "main.js": "/LabelBlindTask/static/js/main.10e3fee7.js",
+    "main.js": "/LabelBlindTask/static/js/main.dd426671.js",
     "static/js/787.b4ed71b4.chunk.js": "/LabelBlindTask/static/js/787.b4ed71b4.chunk.js",
     "index.html": "/LabelBlindTask/index.html",
     "main.073c9b0a.css.map": "/LabelBlindTask/static/css/main.073c9b0a.css.map",
-    "main.10e3fee7.js.map": "/LabelBlindTask/static/js/main.10e3fee7.js.map",
+    "main.dd426671.js.map": "/LabelBlindTask/static/js/main.dd426671.js.map",
     "787.b4ed71b4.chunk.js.map": "/LabelBlindTask/static/js/787.b4ed71b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.10e3fee7.js"
+    "static/js/main.dd426671.js"
   ]
 }
